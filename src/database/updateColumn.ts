@@ -7,7 +7,10 @@ export default async function updateColumn() {
     .eq("id", 1)
     .single();
 
-  console.log(error);
+  if (error) {
+    console.log("Error al actualizar el contador:", error);
+    return;
+  }
   //   console.log(data);
 
   const { status } = await supabase
