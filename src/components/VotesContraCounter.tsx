@@ -5,7 +5,7 @@ import { supabase } from "../database/supabaseClient";
 import { Snippet } from "@nextui-org/react";
 import CountUp from "./CountUp";
 
-export default function VotesCounter() {
+export default function VotesContraCounter() {
   const [contador, setContador] = useState(0);
   const [prevContador, setPrevContador] = useState(0);
 
@@ -30,7 +30,7 @@ export default function VotesCounter() {
       const { data, error } = await supabase
         .from("votos")
         .select("contador")
-        .eq("id", 1)
+        .eq("id", 2)
         .single();
 
       console.log(error);
@@ -49,8 +49,8 @@ export default function VotesCounter() {
 
   return (
     <div className="pt-5">
-      <h1>Total de votos a favor:</h1>
-      <Snippet color="secondary" className="mt-5" symbol="" hideCopyButton>
+      <h1>Total de votos en contra:</h1>
+      <Snippet color="danger" className="mt-5" symbol="" hideCopyButton>
         <CountUp
           start={prevContador}
           end={contador}

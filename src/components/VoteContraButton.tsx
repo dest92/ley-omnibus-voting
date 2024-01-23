@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@nextui-org/react";
 import { NextUIProvider } from "@nextui-org/react";
-import updateColumn from "../database/updateColumn";
+import { updateContraColumn } from "../database/updateColumn";
 
 interface BtnProps {
   type?: "default" | "primary" | "success" | "warning" | "danger" | "secondary";
@@ -16,7 +16,7 @@ interface BtnProps {
   text?: string;
 }
 
-export default function VoteButton({
+export default function VoteContraButton({
   type = "primary",
   variant = "flat",
   text = "Button",
@@ -31,7 +31,7 @@ export default function VoteButton({
   }, []);
 
   const handleVote = async () => {
-    await updateColumn();
+    await updateContraColumn();
     setHasVoted(true);
   };
 

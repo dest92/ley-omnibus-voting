@@ -4,6 +4,9 @@ import VotesCounter from "../components/VotesCounter";
 import updateColumn from "../database/updateColumn";
 import VoteButton from "../components/VoteButton";
 import AboutMe from "../components/AboutMe";
+import VoteContraButton from "../components/VoteContraButton";
+import VotesContraCounter from "../components/VotesContraCounter";
+import HasVotedButton from "../components/HasVotedButton";
 ---
 
 <Layout title="Votá - Ley Bases">
@@ -14,34 +17,43 @@ import AboutMe from "../components/AboutMe";
       </span>
     </h1>
     <p class="justify-center text-center pb-10">
-      En un momento decisivo para nuestra nación, Argentina se enfrenta a una
-      elección trascendental con la presentación de la ley ómnibus impulsada por el Presidente
-      Javier Milei.
+      En un momento significativo para Argentina, el país se encuentra en una
+      etapa importante con la presentación de una nueva ley ómnibus propuesta
+      por el Presidente Javier Milei.
     </p>
     <p class="justify-center text-center pb-10">
-      Este proyecto audaz busca instaurar cambios profundos en diversas áreas
-      como la economía, la educación, y el sistema electoral, con el objetivo de
-      liberar a la sociedad de las restricciones actuales y marcar un nuevo
-      rumbo hacia la prosperidad y la libertad.
+      Este proyecto busca implementar cambios en áreas como la economía, la
+      educación y el sistema electoral. El objetivo declarado es introducir
+      reformas en el marco de las políticas actuales para impactar en la
+      dirección futura del país.
     </p>
     <p class="justify-center text-center pb-10">
-      Es una propuesta que busca restablecer el orden económico y social basado
-      en la doctrina liberal, retomando los principios de la Revolución de Mayo
-      y defendiendo los valores de vida, libertad y propiedad de cada argentino.
+      La propuesta tiene como fin la reestructuración del orden económico y
+      social, inspirándose en corrientes de pensamiento históricas del país y
+      enfocándose en aspectos como la vida, libertad y propiedad.
     </p>
     <p class="justify-center text-center pb-10">
-      Con el espíritu de 'Viva la libertad, carajo', te invitamos a participar y
-      expresar tu voz en esta votación histórica. ¡Tu voto es crucial en la
-      lucha por una Argentina más libre y próspera!
+      Se invita a la ciudadanía a participar y expresar su opinión en esta
+      votación, destacando la importancia de la participación ciudadana en los
+      procesos democráticos.
     </p>
     <h1 class="pt-10">
-      ¿Estás a favor de la ley que va a traer la<span class="text-gradient">
-        libertad de los argentinos?
+      ¿Cuál es tu opinión sobre la nueva <span class="text-gradient">
+        ley propuesta?
       </span>
     </h1>
     <div class="justify-center align-middle text-center">
+      <HasVotedButton client:load />
       <VoteButton text="Sí, estoy a favor" type="success" client:only />
+      <section class="pt-5">
+        <VoteContraButton
+          text="No, estoy en contra"
+          type="danger"
+          client:only
+        />
+      </section>
       <VotesCounter client:load />
+      <VotesContraCounter client:load />
     </div>
     <AboutMe />
   </main>
