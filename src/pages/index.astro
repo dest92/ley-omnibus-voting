@@ -43,15 +43,7 @@ import HasVotedButton from "../components/HasVotedButton";
       </span>
     </h1>
     <div class="justify-center align-middle text-center">
-      <HasVotedButton client:load />
-      <VoteButton text="Sí, estoy a favor" type="success" client:only />
-      <section class="pt-5">
-        <VoteContraButton
-          text="No, estoy en contra"
-          type="danger"
-          client:only
-        />
-      </section>
+      <VoteButton client:only />
       <VotesCounter client:load />
       <VotesContraCounter client:load />
     </div>
